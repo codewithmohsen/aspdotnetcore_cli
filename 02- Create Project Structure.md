@@ -1,4 +1,4 @@
-# Create Project
+# Create Project Structure
 ## 1. Create The New Solution 
 mkdir clean-architecture-proj 
 ```
