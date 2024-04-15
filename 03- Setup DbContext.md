@@ -49,8 +49,7 @@ to
   },
   "AllowedHosts": "*",
   "ConnectionStrings": {
-    "AppConnectionString": "Data source=.;Initial Catalog=App_Db;Integrated Security=true;"
-  }
+    "AppConnectionString": "Server=localhost; User Id=sa; Password=<your_password_here>"}
 }
 ```
 ### 4. Edit .Presentation/Program.cs
