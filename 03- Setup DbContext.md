@@ -53,3 +53,28 @@ to
   }
 }
 ```
+### 4. Edit .Presentation/Program.cs
+add at top
+```
+using Domain;
+using Microsoft.EntityFrameworkCore;
+```
+now between
+```
+using DataLayer;
+using Microsoft.EntityFrameworkCore;
+var builder = WebApplication.CreateBuilder(args);
+```
+and
+```
+var app = builder.Build();
+```
+add bottom code
+```
+#region Add DbContext
+builder.Services.AddDbContext<myDbContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("AppConnectionString"));
+});
+#endregion
+```
