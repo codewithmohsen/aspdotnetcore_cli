@@ -56,7 +56,38 @@ mkdir Application/Services Application/Extensions Application/Sender
 mkdir Application/Services/Interfaces Application/Services/Implementations
 mkdir Infrastructure/Dipendencies
 ```
-## 6. Run Project
+## 6. Install Packages
+```
+cd Domain
+dotnet add package Microsoft.EntityFrameworkCore
+dotnet add package Microsoft.EntityFrameworkCore.Design
+dotnet add package Microsoft.EntityFrameworkCore.Tools
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer 
+```
+```
+dotnet list package
+
+Project 'Domain' has the following package references
+   [net8.0]: 
+   Top-level Package                              Requested   Resolved
+   > Microsoft.EntityFrameworkCore                8.0.4       8.0.4   
+   > Microsoft.EntityFrameworkCore.Design         8.0.4       8.0.4   
+   > Microsoft.EntityFrameworkCore.SqlServer      8.0.4       8.0.4   
+   > Microsoft.EntityFrameworkCore.Tools          8.0.4       8.0.4   
+```
+```
+cd Presentation
+dotnet add package Microsoft.EntityFrameworkCore.Design
+```
+```
+dotnet list package
+
+Project 'Presentation' has the following package references
+   [net8.0]: 
+   Top-level Package                           Requested   Resolved
+   > Microsoft.EntityFrameworkCore.Design      8.0.4       8.0.4  
+```
+## 7. Run Project
 ```
 cd Presentation 
 dotnet build
