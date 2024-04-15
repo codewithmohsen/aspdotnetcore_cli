@@ -5,7 +5,7 @@ mkdir clean-architecture-proj
 dotnet new sln
 ```
 result: clean-architecture-proj.sln created
-## 2. Create Layers
+## 2. Create Solution Layers as Projects
 ### 2.1. Domain
 ```
 dotnet new classlib -o Domain
