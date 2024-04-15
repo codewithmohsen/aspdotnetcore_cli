@@ -45,3 +45,19 @@ Azure Data Studio > Create a Connection >
   password: <YourStrong@Passw0rd>
 ```
 
+### 7. dotnet ef tool
+```
+dotnet tool install --global dotnet-ef
+```
+```
+dotnet ef
+                     _/\__       
+               ---==/    \\      
+         ___  ___   |.    \|\    
+        | __|| __|  |  )   \\\   
+        | _| | _|   \_/ |  //|\\ 
+        |___||_|       /   \\\/\\
+
+Entity Framework Core .NET Command-line Tools 8.0.4
+```
+(ref: https://learn.microsoft.com/en-us/ef/core/cli/dotnet)
