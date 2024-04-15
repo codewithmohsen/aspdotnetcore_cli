@@ -6,28 +6,38 @@ dotnet new sln
 ```
 result: clean-architecture-proj.sln created
 ## 2. Create Layers
-### 2.1. Core/Domain
+### 2.1. Domain
 ```
-dotnet new classlib -o Core/Domain
-rm Core/Domain/Class1.cs
-dotnet sln clean-architecture-proj.sln add Core/Domain
+dotnet new classlib -o Domain
+rm Domain/Class1.cs
+dotnet sln clean-architecture-proj.sln add Domain
 ```
-### 2.2. Core/Data
+### 2.2. Application
 ```
-dotnet new classlib -o Core/Data
-rm Core/Data/Class1.cs
-dotnet sln clean-architecture-proj.sln add Core/Data
+dotnet new classlib -o Application
+rm Application/Class1.cs
+dotnet sln clean-architecture-proj.sln add Application
 ```
-### 2.3. Core/Application
+### 2.3. Infrastructure
 ```
-dotnet new classlib -o Core/Application
-rm Core/Application/Class1.cs
-dotnet sln clean-architecture-proj.sln add Core/Application
+dotnet new classlib -o Infrastructure
+rm Infrastructure/Class1.cs
+dotnet sln clean-architecture-proj.sln add Infrastructure
 ```
-### 2.4. Infrastructure/IOC
+### 2.4. Presentation  
 ```
-dotnet new classlib -o Infrastructure/IOC
-rm Infrastructure/IOC/Class1.cs
-dotnet sln clean-architecture-proj.sln add Infrastructure/IOC
+dotnet new webapi -o Presentation
+dotnet sln clean-architecture-proj.sln add Presentation
 ```
-### 2.5. Infrastructure/Presentation
+## 3. Check Added projects in solution clean-architecture-proj
+```
+dotnet sln clean-architecture-proj.sln list
+
+Project(s)
+----------
+Application/Application.csproj
+Domain/Domain.csproj
+Infrastructure/Infrastructure.csproj
+Presentation/Presentation.csproj
+```
+
