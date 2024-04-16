@@ -48,8 +48,9 @@ to
     }
   },
   "AllowedHosts": "*",
-  "ConnectionStrings": {
-    "AppConnectionString": "Server=localhost; User Id=sa; Password=<your_password_here>"}
+"ConnectionStrings": {
+    "AppConnectionString": "Server=localhost; Database=myDb; User Id=sa; Password=<your_password_here>; TrustServerCertificate=true"
+  }
 }
 ```
 ### 4. Edit .Presentation/Program.cs
