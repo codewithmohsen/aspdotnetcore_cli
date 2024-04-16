@@ -61,3 +61,12 @@ public class myDbContext : DbContext
     #endregion
 }
 ```
+## 4. Create Migration
+```
+cd Presentation
+dotnet ef migrations add addUserTable   
+```
+## 5. Update Database
+```
+dotnet ef database update
+```
