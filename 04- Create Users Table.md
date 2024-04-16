@@ -1,8 +1,7 @@
 # Create Users Table
 ## 1. Create /Domain/Entities/User Class
 ```
-cd Domain/Entities/
-dotnet new class --name User
+dotnet new class --output Domain/Entities --name User
 ```
 ## 2. Edit /Domain/Entities/User Class
 update
