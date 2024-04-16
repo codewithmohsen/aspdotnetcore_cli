@@ -1,8 +1,7 @@
 # Setup DbContext
 ## 1. Create /Domain/Data/Context/myDbContext Class
 ```
-cd Domain/Data/Context
-dotnet new class --name myDbContext
+dotnet new class --output Domain/Data/Context --name myDbContext
 ```
 ## 2. Edit /Domain/Data/Context/myDbContext Class
 open Domain/Data/Context.myDbContext.cs
