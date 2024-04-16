@@ -11,7 +11,7 @@ public class User
 {
 }
 ```
-to
+with
 ```
 namespace Domain;
 public class User
@@ -45,7 +45,7 @@ public class MyDbContext : DbContext
     }
 }
 ```
-to
+with
 ```
 namespace Domain;
 using Microsoft.EntityFrameworkCore;
