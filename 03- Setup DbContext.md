@@ -76,4 +76,8 @@ builder.Services.AddDbContext<MyDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("AppConnectionString"), b => b.MigrationsAssembly("Presentation"));
 });
 #endregion
+#region Add CORS
+builder.Services.AddCors();
+#endregion
+
 ```
