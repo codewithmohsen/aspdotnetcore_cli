@@ -1,4 +1,4 @@
-# Restful AspDotNetCore Clean Architecture DotNet Cli Helper
+# Clean Architecture Restful ASP.Net Core by DotNet CLI - Step by step:
 Step-by-Step Guide for Creating a New .NET Core Project with Clean Architecture using the .NET CLI.
 
 #DotNet8 #Mac #Visual_Studio_Code #DotNet_CLI  #Docker #Azure_Data_Studio
