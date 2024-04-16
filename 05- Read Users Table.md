@@ -5,7 +5,7 @@
 dotnet new interface --output Domain/Interfaces --name IUserRepository
 ```
 ## 2. Edit IUserRepository Interface
-update
+replace
 ```
 namespace Domain;
 public interface IUserRepository
@@ -28,7 +28,7 @@ public interface IUserRepository
 dotnet new class --output Domain/Data/Repositories --name UserRepository
 ```
 ### 4. Update UserRepository Class
-update
+replace
 ```
 namespace Domain;
 public class UserRepository
@@ -63,7 +63,7 @@ public class UserRepository : IUserRepository
 dotnet new interface --output Application/Services/Interfaces --name IUserService
 ```
 ## 6. Edit IUserService Interface
-update
+replace
 ```
 namespace Application;
 public interface IUserService
@@ -85,7 +85,7 @@ public interface IUserService
 dotnet new class --output Application/Services/Implementations --name UserService
 ```
 ## 8. Update UserRepository Class
-update
+replace
 ```
 namespace Application;
 public class UserService
@@ -119,7 +119,7 @@ public class UserService : IUserService
 dotnet new class --output Infrastructure/Dipendencies --name DependencyContainer
 ```
 ## 10. Update  Class
-update
+replace
 ```
 namespace Infrastructure;
 public class DependencyContainer
@@ -146,11 +146,13 @@ public static class DependencyContainer
 }
 ```
 ## 11. Update Application.program.cs
-add at top
+### 11.1
+add using
 ```
 using Infrastructure;
 ```
-now add
+### 11.2
+add
 ```
 #region Add Services
 builder.Services.RegisterServices();
@@ -216,11 +218,13 @@ namespace MyApp.Namespace
 }
 ```
 ## 13. Edit UserController API Controller
+### 13.1
 add using
 ```
 using Application;
 using Domain;
 ```
+### 13.2
 add IUserService object and Constructor
 ```
         private readonly IUserService _userService;
@@ -229,7 +233,8 @@ add IUserService object and Constructor
             _userService = userService;
         }
 ```
-now update
+### 13.3 
+replace
 ```
         // GET: api/<UserController>
         [HttpGet]
@@ -247,7 +252,8 @@ to
             return await _userService.GetAllUsersAsync();
         }
 ```
-and update
+### 13.4
+replace
 ```
         // GET api/<UserController>/5
         [HttpGet("{id}")]
