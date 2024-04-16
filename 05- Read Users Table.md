@@ -171,3 +171,97 @@ builder.Services.AddDbContext<MyDbContext>(options =>
 });
 #endregion
 ```
+## 12. Create UserController API Controller
+```
+dotnet new apicontroller --output Presentation/Controllers --actions true --name UserController
+```
+now you have
+```
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+namespace MyApp.Namespace
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class UserController : ControllerBase
+    {
+        // GET: api/<UserController>
+        [HttpGet]
+        public IEnumerable<string> Get()
+        {
+            return new string[] { "value1", "value2" };
+        }
+        // GET api/<UserController>/5
+        [HttpGet("{id}")]
+        public string Get(int id)
+        {
+            return "value";
+        }
+        // POST api/<UserController>
+        [HttpPost]
+        public void Post([FromBody] string value)
+        {
+        }
+        // PUT api/<UserController>/5
+        [HttpPut("{id}")]
+        public void Put(int id, [FromBody] string value)
+        {
+        }
+        // DELETE api/<UserController>/5
+        [HttpDelete("{id}")]
+        public void Delete(int id)
+        {
+        }
+    }
+}
+```
+## 13. Edit UserController API Controller
+add using
+```
+using Application;
+using Domain;
+```
+add IUserService object and Constructor
+```
+        private readonly IUserService _userService;
+        public UserController(IUserService userService)
+        {
+            _userService = userService;
+        }
+```
+now update
+```
+        // GET: api/<UserController>
+        [HttpGet]
+        public IEnumerable<string> Get()
+        {
+            return new string[] { "value1", "value2" };
+        }
+```
+to
+```
+        // GET: api/<UserController>
+        [HttpGet]
+        public async Task<IEnumerable<User>> Get()
+        {
+            return await _userService.GetAllUsersAsync();
+        }
+```
+and update
+```
+        // GET api/<UserController>/5
+        [HttpGet("{id}")]
+        public string Get(int id)
+        {
+            return "value";
+        }
+```
+to
+```
+        // GET api/<UserController>/5
+        [HttpGet("{id}")]
+        public async Task<User?> Get(int id)
+        {
+            return await _userService.GetUserByIdAsync(id);
+        }
+```
