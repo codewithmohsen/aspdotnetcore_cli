@@ -61,12 +61,23 @@ public class myDbContext : DbContext
     #endregion
 }
 ```
-## 4. Create Migration
+### 4. Check DbContext Info
+```
+dotnet ef dbcontext info                                                                       took 4s
+Build started...
+Build succeeded.
+Type: Domain.myDbContext
+Provider name: Microsoft.EntityFrameworkCore.SqlServer
+Database name: myDb
+Data source: localhost
+Options: MigrationsAssembly=Presentation
+```
+## 5. Create Migration
 ```
 cd Presentation
 dotnet ef migrations add addUserTable   
 ```
-## 5. Update Database
+## 6. Update Database
 ```
 dotnet ef database update
 ```
