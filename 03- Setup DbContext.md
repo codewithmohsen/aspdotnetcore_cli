@@ -70,10 +70,10 @@ var app = builder.Build();
 ```
 add bottom code
 ```
-#region Add DbContext
+#region Add myDbContext
 builder.Services.AddDbContext<myDbContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("AppConnectionString"));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("AppConnectionString"), b => b.MigrationsAssembly("Presentation"));
 });
 #endregion
 ```
