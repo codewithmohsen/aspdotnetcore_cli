@@ -271,3 +271,10 @@ with
             return await _userService.GetUserByIdAsync(id);
         }
 ```
+## 14. Run Project
+```
+cd presentation
+dotnet run
+```
+http://localhost:5168/api/user
+http://localhost:5168/api/user/1
