@@ -1,14 +1,14 @@
 # Setup DbContext
-## 1. Create /Domain/Data/Context/myDbContext Class
+## 1. Create /Domain/Data/Context/MyDbContext Class
 ```
-dotnet new class --output Domain/Data/Context --name myDbContext
+dotnet new class --output Domain/Data/Context --name MyDbContext
 ```
-## 2. Edit /Domain/Data/Context/myDbContext Class
-open Domain/Data/Context.myDbContext.cs
+## 2. Edit /Domain/Data/Context/MyDbContext Class
+open Domain/Data/Context.MyDbContext.cs
 update
 ```
 namespace Domain;
-public class myDbContext
+public class MyDbContext
 {
 }
 ```
@@ -16,9 +16,9 @@ to
 ```
 namespace Domain;
 using Microsoft.EntityFrameworkCore;
-public class myDbContext : DbContext
+public class MyDbContext : DbContext
 {
-    public myDbContext(DbContextOptions<myDbContext> options)
+    public MyDbContext(DbContextOptions<MyDbContext> options)
             : base(options)
     {
     }
@@ -70,8 +70,8 @@ var app = builder.Build();
 ```
 add bottom code
 ```
-#region Add myDbContext
-builder.Services.AddDbContext<myDbContext>(options =>
+#region Add MyDbContext
+builder.Services.AddDbContext<MyDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("AppConnectionString"), b => b.MigrationsAssembly("Presentation"));
 });
