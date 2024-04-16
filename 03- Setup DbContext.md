@@ -5,14 +5,14 @@ dotnet new class --output Domain/Data/Context --name MyDbContext
 ```
 ## 2. Edit /Domain/Data/Context/MyDbContext Class
 open Domain/Data/Context.MyDbContext.cs
-update
+replace
 ```
 namespace Domain;
 public class MyDbContext
 {
 }
 ```
-to
+with
 ```
 namespace Domain;
 using Microsoft.EntityFrameworkCore;
@@ -25,7 +25,7 @@ public class MyDbContext : DbContext
 }
 ```
 ### 3. Edit /Presentation/appsettings.json
-update
+replace
 ```
 {
   "Logging": {
@@ -37,7 +37,7 @@ update
   "AllowedHosts": "*"
 }
 ```
-to
+with
 ```
 {
   "Logging": {
@@ -68,7 +68,7 @@ and
 ```
 var app = builder.Build();
 ```
-add bottom code
+add
 ```
 #region Add MyDbContext
 builder.Services.AddDbContext<MyDbContext>(options =>
