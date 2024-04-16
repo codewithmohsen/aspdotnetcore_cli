@@ -30,7 +30,7 @@ sudo docker pull mcr.microsoft.com/mssql/server:2022-latest
 (ref: https://learn.microsoft.com/en-us/sql/linux/quickstart-install-connect-docker)
 ### 6.3. Install SQL Server Image on Docker
 ```
-sudo docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=<YourStrong@Passw0rd>" \
+sudo docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=<your_password_here>" \
    -p 1433:1433 --name sql1 --hostname sql1 \
    -d \
    mcr.microsoft.com/mssql/server:2022-latest
@@ -42,7 +42,7 @@ Azure Data Studio > Create a Connection >
   server: localhost
   authentication type: SQL login
   user name: SA
-  password: <YourStrong@Passw0rd>
+  password: <your_password_here>
 ```
 
 ### 7. dotnet ef tool
