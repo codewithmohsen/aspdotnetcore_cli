@@ -1,10 +1,10 @@
 # Read Users Table
 
-## 1. Create Interface
+## 1. Create IUserRepository Interface
 ```
 dotnet new interface --output Domain/Interfaces --name IUserRepository
 ```
-## 2. Edit Interface
+## 2. Edit IUserRepository Interface
 update
 ```
 namespace Domain;
@@ -23,11 +23,11 @@ public interface IUserRepository
     #endregion
 }
 ```
-### 3. Create Class
+### 3. Create UserRepository Class
 ```
 dotnet new class --output Domain/Data/Repositories --name UserRepository
 ```
-### 4. Update Class
+### 4. Update UserRepository Class
 update
 ```
 namespace Domain;
@@ -56,5 +56,27 @@ public class UserRepository : IUserRepository
     => await _context.Users.FirstOrDefaultAsync(u => u.UserId == id);
     #endregion
 
+}
+```
+## 5. Create IUserService Interface
+```
+dotnet new interface --output Application/Services/Interfaces --name IUserService
+```
+## 6. Edit IUserService Interface
+update
+```
+namespace Application;
+public interface IUserService
+{
+}
+```
+to
+```
+using Domain;
+namespace Application;
+public interface IUserService
+{
+    Task<IEnumerable<User>> GetAllUsersAsync();
+    Task<User?> GetUserByIdAsync(int id);
 }
 ```
