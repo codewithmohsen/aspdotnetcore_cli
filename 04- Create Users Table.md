@@ -4,7 +4,7 @@
 dotnet new class --output Domain/Entities --name User
 ```
 ## 2. Edit /Domain/Entities/User Class
-update
+replace
 ```
 namespace Domain;
 public class User
@@ -33,7 +33,7 @@ public class User
 }
 ```
 ## 3. Edit /Domain/Data/Context/MyDbContext Class
-update
+replace
 ```
 namespace Domain;
 using Microsoft.EntityFrameworkCore;
