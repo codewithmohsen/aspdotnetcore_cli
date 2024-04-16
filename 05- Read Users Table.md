@@ -12,7 +12,7 @@ public interface IUserRepository
 {
 }
 ```
-to
+with
 ```
 namespace Domain;
 public interface IUserRepository
@@ -35,7 +35,7 @@ public class UserRepository
 {
 }
 ```
-to
+with
 ```
 using System;
 using Microsoft.EntityFrameworkCore;
@@ -70,7 +70,7 @@ public interface IUserService
 {
 }
 ```
-to
+with
 ```
 using Domain;
 namespace Application;
@@ -92,7 +92,7 @@ public class UserService
 {
 }
 ```
-to
+with
 ```
 using Domain;
 namespace Application;
@@ -126,7 +126,7 @@ public class DependencyContainer
 {
 }
 ```
-to
+with
 ```
 using Application;
 using Domain;
@@ -243,7 +243,7 @@ replace
             return new string[] { "value1", "value2" };
         }
 ```
-to
+with
 ```
         // GET: api/<UserController>
         [HttpGet]
@@ -262,7 +262,7 @@ replace
             return "value";
         }
 ```
-to
+with
 ```
         // GET api/<UserController>/5
         [HttpGet("{id}")]
