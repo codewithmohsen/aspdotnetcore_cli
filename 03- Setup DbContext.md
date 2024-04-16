@@ -81,3 +81,13 @@ builder.Services.AddCors();
 #endregion
 
 ```
+and after
+```
+app.UseRouting();
+```
+add
+```
+#region Use CORS
+app.UseCors(policy => policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("*"));
+#endregion
+```
