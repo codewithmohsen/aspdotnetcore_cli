@@ -32,14 +32,14 @@ public class User
     public string UserName { get; set; }
 }
 ```
-## 3. Edit /Domain/Data/Context/myDbContext Class
+## 3. Edit /Domain/Data/Context/MyDbContext Class
 update
 ```
 namespace Domain;
 using Microsoft.EntityFrameworkCore;
-public class myDbContext : DbContext
+public class MyDbContext : DbContext
 {
-    public myDbContext(DbContextOptions<myDbContext> options)
+    public MyDbContext(DbContextOptions<MyDbContext> options)
             : base(options)
     {
     }
@@ -49,9 +49,9 @@ to
 ```
 namespace Domain;
 using Microsoft.EntityFrameworkCore;
-public class myDbContext : DbContext
+public class MyDbContext : DbContext
 {
-    public myDbContext(DbContextOptions<myDbContext> options)
+    public MyDbContext(DbContextOptions<MyDbContext> options)
             : base(options)
     {
     }
@@ -65,7 +65,7 @@ public class myDbContext : DbContext
 dotnet ef dbcontext info                                                                       took 4s
 Build started...
 Build succeeded.
-Type: Domain.myDbContext
+Type: Domain.MyDbContext
 Provider name: Microsoft.EntityFrameworkCore.SqlServer
 Database name: myDb
 Data source: localhost
