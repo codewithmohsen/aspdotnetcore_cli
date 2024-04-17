@@ -217,6 +217,19 @@ namespace MyApp.Namespace
     }
 }
 ```
+replace
+```
+public class UserController : ControllerBase
+```
+with
+```
+public class UserController : BaseController
+```
+remove
+```
+    [Route("api/[controller]")]
+    [ApiController]
+```
 ## 13. Edit UserController API Controller
 ### 13.1
 add using
