@@ -1,7 +1,7 @@
 # Create Base API Controller
 ```
 dotnet new apicontroller --output Presentation/Controllers --actions false --name BaseController
-```s
+```
 now we have
 ```
 using Microsoft.AspNetCore.Mvc;
