@@ -13,6 +13,7 @@ public class User
 ```
 with
 ```
+using System.ComponentModel.DataAnnotations;
 namespace Domain;
 public class User
 {
@@ -30,6 +31,16 @@ public class User
     [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
     [MaxLength(350, ErrorMessage = "حداکثر کاراکتر مجاز {1} میباشد")]
     public string UserName { get; set; }
+    [Display(Name = "شماره موبایل")]
+    [MaxLength(11, ErrorMessage = "حداکثر کاراکتر مجاز {1} میباشد")]
+    public string? Mobile { get; set; }
+    [Display(Name = "آواتار")]
+    [MaxLength(50, ErrorMessage = "حداکثر کاراکتر مجاز {1} میباشد")]
+    public string Avatar { get; set; }
+    [Display(Name = "ایمیل فعال باشد؟")]
+    public bool IsEmailActive { get; set; }
+    [Display(Name = "تاریخ ثبت نام")]
+    public DateTime RegisterDate { get; set; }
 }
 ```
 ## 3. Edit /Domain/Data/Context/MyDbContext Class
